@@ -1,0 +1,16 @@
+version: '1.0'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./website:/usr/share/nginx/html
+    networks:
+      - webnet
+
+networks:
+  webnet:
